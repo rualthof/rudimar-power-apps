@@ -1,57 +1,56 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export function PersonalSection({ personalInfo }) {
-    const [isCollapsed, setIsCollapsed] = useState(false)
-
     return (
-        <section className="flex flex-col items-start gap-3 sm:gap-4 border-b pb-8">
-            <div className="w-full flex justify-between items-center">
-                <h1 className="text-4xl font-bold mb-2 text-gradient">{personalInfo.name}</h1>
-                <button 
-                    onClick={() => setIsCollapsed(!isCollapsed)}
-                    className="text-2xl hover:opacity-75 transition-opacity"
-                >
-                    {isCollapsed ? '⌄' : '⌃'}
-                </button>
-            </div>
-            
-            {!isCollapsed && (
-                <div className="flex flex-col md:flex-row gap-8 w-full">
-                    <div className="flex-1">
-                        <p className="text-xl mb-4">{personalInfo.profession}</p>
-                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mb-6">
-                            {personalInfo.about}
-                        </p>
-                        <div className="flex gap-4">
-                            {personalInfo.socials.map((social) => (
-                                <Link
-                                    key={social.name}
-                                    href={social.href}
-                                    className="flex items-center gap-2 hover:opacity-75 transition-opacity"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <span>{social.icon}</span>
-                                    <span>{social.name}</span>
-                                </Link>
-                            ))}
-                        </div>
+        <section className="rounded-xl p-8 mb-8">
+            <div className="flex flex-col md:flex-row items-start gap-8">
+                {/* Content - Left side */}
+                <div className="flex-1 order-2 md:order-1">
+                    <h1 className="text-3xl md:text-4xl font-playfair font-bold text-gradient mb-6">
+                        {personalInfo.name}
+                    </h1>
+                    
+                    <p className="text-lg md:text-xl font-playfair text-gold mb-4">
+                        {personalInfo.profession}
+                    </p>
+                    
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                        {personalInfo.about}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-3">
+                        {personalInfo.socials.map((social) => (
+                            <Link
+                                key={social.name}
+                                href={social.href}
+                                className="premium-social-link no-underline flex items-center gap-2 hover:scale-105 transition-all duration-300"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span className="text-lg">{social.icon}</span>
+                                <span className="text-gray-200 text-sm">{social.name}</span>
+                            </Link>
+                        ))}
                     </div>
-                    <div className="w-64 h-64 relative self-start flex-shrink-0">
+                </div>
+
+                {/* Image - Right side */}
+                <div className="relative w-48 h-48 md:w-72 md:h-[350px] mx-auto md:mx-0 flex-shrink-0 order-1 md:order-2">
+                    <div className="relative w-full h-full overflow-hidden">
                         <Image
                             src={personalInfo.imageurl}
                             alt={`Photo of ${personalInfo.name}`}
                             fill
-                            className="rounded-lg object-cover"
+                            className="object-cover rounded-full md:rounded-xl  premium-border hover:scale-105 transition-transform duration-500"
                             priority
+                            sizes="(max-width: 768px) 192px, 288px"
                         />
                     </div>
                 </div>
-            )}
+            </div>
         </section>
     )
 }

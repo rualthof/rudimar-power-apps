@@ -45,7 +45,7 @@ export function Footer() {
                 
                 <div className="mt-8 text-center">
                     <p className="text-sm text-gray-400">
-                        © {new Date().getFullYear()} Rudimar B. Althof. 
+                        © {new Date().getFullYear()} Rudimar B. Althof. <br />
                         <span className="text-gold"> Premium Power Platform Development</span>
                     </p>
                 </div>
