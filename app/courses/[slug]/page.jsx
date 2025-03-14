@@ -38,18 +38,18 @@ export default function CoursePage({ params }) {
                     
                     {/* Content Container */}
                     <div className="absolute inset-0 z-20 flex flex-col justify-end">
-                        <div className="w-full p-8 lg:p-12">
-                            <div className="max-w-3xl mx-auto space-y-6">
+                        <div className="w-full p-4 sm:p-8 lg:p-10">
+                            <div className="max-w-2xl mx-auto space-y-4 sm:space-y-6">
                                 {/* Title */}
-                                <div className="premium-card inline-block p-4 rounded-xl">
-                                    <h1 className="text-4xl lg:text-6xl font-playfair font-bold text-gradient">
+                                <div className="premium-card p-3 sm:p-4 rounded-xl">
+                                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-playfair font-bold text-gradient text-center">
                                         {course.title}
                                     </h1>
                                 </div>
                                 
                                 {/* Description */}
-                                <div className="premium-card p-6 rounded-xl">
-                                    <p className="text-xl text-gray-100 leading-relaxed">
+                                <div className="premium-card p-4 sm:p-6 rounded-xl">
+                                    <p className="text-base sm:text-lg text-gray-100 leading-relaxed">
                                         {course.description}
                                     </p>
                                 </div>
