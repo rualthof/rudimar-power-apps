@@ -44,7 +44,7 @@ export default function CoursePage({ params }) {
 
                 {/* Projects */}
                 <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold">What You'll Build</h2>
+                    <h2 className="text-2xl font-semibold">What You&apos;ll Build</h2>
                     <div className="grid gap-6 md:grid-cols-2">
                         {course.projects.map((project, index) => (
                             <div key={index} className="bg-gray-800/50 p-6 rounded-xl">
