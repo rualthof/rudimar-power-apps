@@ -1,42 +1,55 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
+const socialLinks = [
+    {
+        name: 'LinkedIn',
+        href: 'https://linkedin.com/in/rudimar/',
+        icon: '/logos/linkedin-app-white-icon.svg'
+    },
+    {
+        name: 'YouTube',
+        href: 'https://www.youtube.com/@powerrudy',
+        icon: '/logos/youtube-app-white-icon.svg'
+    },
+    {
+        name: 'Instagram',
+        href: 'https://www.instagram.com/powerappsrudi',
+        icon: '/logos/instagram-white-icon.svg'
+    }
+];
 
 export function Footer() {
     return (
-        <footer className="pt-16 pb-12 sm:pt-24 sm:pb-16 text-center space-y-4">
-            <div className="flex justify-center space-x-6 text-sm">
-                <Link 
-                    href="https://linkedin.com/in/rudimar/" 
-                    className="text-primary hover:opacity-80 transition"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                >
-                    LinkedIn
-                </Link>
-                <Link 
-                    href="https://www.youtube.com/@powerrudy" 
-                    className="text-primary hover:opacity-80 transition"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                >
-                    YouTube
-                </Link>
-                <Link 
-                    href="https://www.instagram.com/powerappsrudi" 
-                    className="text-primary hover:opacity-80 transition"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                >
-                    Instagram
-                </Link>
+        <footer className="pt-16 pb-12 sm:pt-24 sm:pb-16">
+            <div className="max-w-4xl mx-auto px-6">
+                <div className="flex justify-center gap-6">
+                    {socialLinks.map((link, index) => (
+                        <Link 
+                            key={index}
+                            href={link.href}
+                            className="premium-social-link group"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Image 
+                                src={link.icon} 
+                                alt={link.name} 
+                                width={24} 
+                                height={24}
+                                className="opacity-80 group-hover:opacity-100 transition-opacity"
+                            />
+                        </Link>
+                    ))}
+                </div>
+                
+                <div className="mt-8 text-center">
+                    <p className="text-sm text-gray-400">
+                        © {new Date().getFullYear()} Rudimar B. Althof. 
+                        <span className="text-gold"> Premium Power Platform Development</span>
+                    </p>
+                </div>
             </div>
-            <p className="text-sm hidden">
-                <Link 
-                    href="https://docs.netlify.com/frameworks/next-js/overview/" 
-                    className="underline transition decoration-dashed text-primary underline-offset-8 hover:opacity-80"
-                >
-                    Next.js on Netlify
-                </Link>
-            </p>
         </footer>
     );
-};
+}
