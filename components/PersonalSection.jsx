@@ -10,7 +10,7 @@ export function PersonalSection({ personalInfo }) {
     return (
         <section className="flex flex-col items-start gap-3 sm:gap-4 border-b pb-8">
             <div className="w-full flex justify-between items-center">
-                <h1 className="text-4xl font-bold mb-2">{personalInfo.name}</h1>
+                <h1 className="text-4xl font-bold mb-2 text-gradient">{personalInfo.name}</h1>
                 <button 
                     onClick={() => setIsCollapsed(!isCollapsed)}
                     className="text-2xl hover:opacity-75 transition-opacity"

@@ -17,61 +17,104 @@ export default function CoursePage({ params }) {
 
     return (
         <main className="max-w-4xl mx-auto py-16 px-6">
-            <div className="space-y-8">
+            <div className="space-y-12">
                 {/* Hero Section */}
-                <div className="aspect-video relative rounded-xl overflow-hidden mb-8">
+                <div className="relative h-[500px] lg:h-[600px] rounded-xl overflow-hidden premium-border">
+                    {/* Background Image */}
                     <Image
                         src={course.image}
                         alt={course.title}
                         fill
-                        className="object-cover"
+                        className="object-cover z-0"
                         priority
+                        quality={90}
                     />
+                    
+                    {/* Gradient Overlays */}
+                    <div className="absolute inset-0 z-10">
+                        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-transparent opacity-90" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-dark/80 via-transparent to-transparent" />
+                    </div>
+                    
+                    {/* Content Container */}
+                    <div className="absolute inset-0 z-20 flex flex-col justify-end">
+                        <div className="w-full p-8 lg:p-12">
+                            <div className="max-w-3xl mx-auto space-y-6">
+                                {/* Title */}
+                                <div className="premium-card inline-block p-4 rounded-xl">
+                                    <h1 className="text-4xl lg:text-6xl font-playfair font-bold text-gradient">
+                                        {course.title}
+                                    </h1>
+                                </div>
+                                
+                                {/* Description */}
+                                <div className="premium-card p-6 rounded-xl">
+                                    <p className="text-xl text-gray-100 leading-relaxed">
+                                        {course.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <h1 className="text-4xl font-bold">{course.title}</h1>
-                <p className="text-xl text-gray-300">{course.description}</p>
-
                 {/* Key Highlights */}
-                <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold">Key Highlights</h2>
-                    <ul className="space-y-2">
+                <section className="premium-card p-8 rounded-xl">
+                    <h2 className="text-2xl font-playfair font-semibold text-gold mb-6">Key Highlights</h2>
+                    <ul className="space-y-4">
                         {course.keyHighlights.map((highlight, index) => (
-                            <li key={index} className="text-gray-300">{highlight}</li>
+                            <li key={index} className="text-gray-300 flex items-start gap-3">
+                                <span className="text-gold">•</span>
+                                <span>{highlight}</span>
+                            </li>
                         ))}
                     </ul>
                 </section>
 
                 {/* Projects */}
-                <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold">What You&apos;ll Build</h2>
+                <section className="space-y-6">
+                    <h2 className="text-2xl font-playfair font-semibold text-gradient">What You&apos;ll Build</h2>
                     <div className="grid gap-6 md:grid-cols-2">
                         {course.projects.map((project, index) => (
-                            <div key={index} className="bg-gray-800/50 p-6 rounded-xl">
-                                <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-                                <p className="text-gray-300">{project.description}</p>
+                            <div key={index} className="premium-card overflow-hidden rounded-xl group hover:scale-[1.02] transition-transform duration-300">
+                                <div className="relative h-48 w-full">
+                                    <Image
+                                        src={project.project_image || '/images/placeholder-project.jpg'}
+                                        alt={project.name}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent" />
+                                </div>
+                                <div className="p-6 relative">
+                                    <h3 className="text-xl font-semibold text-gold mb-3">{project.name}</h3>
+                                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
                 </section>
 
                 {/* Automation Content */}
-                <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold">Power Automate Integration</h2>
-                    <ul className="space-y-2">
+                <section className="premium-card p-8 rounded-xl">
+                    <h2 className="text-2xl font-playfair font-semibold text-gold mb-6">Power Automate Integration</h2>
+                    <ul className="space-y-4">
                         {course.automationContent.map((content, index) => (
-                            <li key={index} className="text-gray-300">{content}</li>
+                            <li key={index} className="text-gray-300 flex items-start gap-3">
+                                <span className="text-gold">•</span>
+                                <span>{content}</span>
+                            </li>
                         ))}
                     </ul>
                 </section>
 
                 {/* CTA */}
-                <div className="mt-12 text-center">
+                <div className="text-center py-8">
                     <Link
                         href={course.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-primary btn-lg"
+                        className="premium-button inline-block"
                     >
                         Enroll Now on {course.platform}
                     </Link>
