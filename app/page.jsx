@@ -5,6 +5,8 @@ import { Markdown } from 'components/markdown';
 import { ContextAlert } from 'components/context-alert';
 import { getNetlifyContext } from 'utils';
 import { PersonalSection } from '../components/PersonalSection'
+import { CourseCard } from '../components/CourseCard';
+import { courses } from '../data/courses';
 
 const cards = [
     //{ text: 'Hello', linkText: 'someLink', href: '/' }
@@ -50,14 +52,61 @@ const personalInfo = {
     ]
 };
 
+const youtubeVideos = [
+    {
+        id: '3TNJnYmVVew',
+        title: 'Power Apps Tutorial'
+    },
+    {
+        id: 'gwHW2791z2E',
+        title: 'Power Apps Development'
+    },
+    {
+        id: '4yDmIbsqqBM',
+        title: 'Power Apps Tips'
+    }
+];
+
 const ctx = getNetlifyContext();
 
 export default function Page() {
     return (
         <main className="flex flex-col gap-8 sm:gap-16">
             <PersonalSection personalInfo={personalInfo} />
+  
+            <section className="flex flex-col gap-4">
+                <h2 className="text-xl font-bold">Featured YouTube Videos</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {youtubeVideos.map((video, index) => (
+                        <div key={index} className="aspect-video bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src={`https://www.youtube.com/embed/${video.id}`}
+                                title={video.title}
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                className="w-full h-full"
+                            ></iframe>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="flex flex-col gap-4">
+                <h2 className="text-xl font-bold">Courses</h2>
+                <div className="grid grid-cols-1 gap-6">
+                    {courses.map((course, index) => (
+                        <CourseCard key={index} course={course} />
+                    ))}
+                </div>
+            </section>
+
+            <hr />
             
-            {/* Existing Content */}
+        <div className='hidden'>
+
             <section className="flex flex-col items-start gap-3 sm:gap-4">
                 <ContextAlert />
                 <h1 className="mb-0">Netlify Platform Starter - Next.js</h1>
@@ -81,6 +130,7 @@ export default function Page() {
                 <Markdown content={postDynamicContentExplainer} />
             </section>
             {/* !!cards?.length && <CardsGrid cards={cards} /> */}
+        </div>
         </main>
     );
 }

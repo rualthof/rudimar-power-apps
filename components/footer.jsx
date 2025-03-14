@@ -29,7 +29,7 @@ export function Footer() {
                     Instagram
                 </Link>
             </div>
-            <p className="text-sm">
+            <p className="text-sm hidden">
                 <Link 
                     href="https://docs.netlify.com/frameworks/next-js/overview/" 
                     className="underline transition decoration-dashed text-primary underline-offset-8 hover:opacity-80"

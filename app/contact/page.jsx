@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+const CONTACT_FORM_URL = "https://forms.office.com/Pages/ResponsePage.aspx?id=BUYQf-llWE6ne6YCnfKJ2ZbFPOWjjSpKiy0eYvhqTtxUQkE0TFlBRVRKNFZRQjgwT1lHRUFBRzFEQi4u&embed=true";
+
 export default function TrainingPage() {
     return (
         <main className="max-w-4xl mx-auto py-16 px-6 text-gray-200">
@@ -37,17 +39,19 @@ export default function TrainingPage() {
             </section>
 
             {/* Embedded Microsoft Form */}
-            <section className="mt-10 w-full">
-                <h2 className="text-2xl font-semibold text-primary text-center mb-4">Apply Now</h2>
-                <p className="text-gray-400 text-center mb-6">Fill out the form below to apply for training or consulting.</p>
+            <section className="mt-10 -mx-6 sm:-mx-12">
+                <div className="max-w-4xl mx-auto px-6 sm:px-12">
+                    <h2 className="text-2xl font-semibold text-primary text-center mb-4">Apply Now</h2>
+                    <p className="text-gray-400 text-center mb-6">Fill out the form below to apply for training or consulting.</p>
+                </div>
 
-                <div className="w-full aspect-[4/3] relative bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                <div className="w-full h-[1000px] relative bg-gray-800 shadow-lg">
                     <iframe 
-                        src="https://forms.office.com/Pages/ResponsePage.aspx?id=BUYQf-llWE6ne6YCnfKJ2ZbFPOWjjSpKiy0eYvhqTtxUODJCMTk4U1VQSFlCUUsyQUpEWkM0TzRURS4u&embed=true" 
+                        src={CONTACT_FORM_URL}
                         className="absolute inset-0 w-full h-full"
                         style={{ 
                             border: "none",
-                            backgroundColor: "transparent"
+                            backgroundColor: "transparent",
                         }} 
                         allowFullScreen
                     ></iframe>
@@ -55,7 +59,7 @@ export default function TrainingPage() {
             </section>
 
             {/* Back to Home Button */}
-            <div className="text-center mt-12">
+            <div className="text-center mt-12 px-6 sm:px-12">
                 <Link href="/" className="btn btn-primary">Back to Home</Link>
             </div>
         </main>

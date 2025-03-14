@@ -1,24 +1,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import netlifyLogo from 'public/site-logo.png';
+import siteLogo from 'public/site-logo-light.png';
 import githubLogo from 'public/images/github-mark-white.svg';
+import linkedinLogo from 'public/logos/linkedin-app-white-icon.svg';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Carreer', href: '/carreer' },
     { linkText: 'Contact', href: '/contact' },
+    /* Add the following items 
     { linkText: 'Revalidation', href: '/revalidation' },
     { linkText: 'Image CDN', href: '/image-cdn' },
     { linkText: 'Edge Function', href: '/edge' },
     { linkText: 'Blobs', href: '/blobs' },
     { linkText: 'Classics', href: '/classics' }
+     */
 ];
 
 export function Header() {
     return (
-        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
+        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12">
             <Link href="/">
-                <Image src={netlifyLogo} alt="Netlify logo" className='w-[160px]' />
+                <Image src={siteLogo} alt="Netlify logo" className='w-[160px]' />
             </Link>
             {!!navItems?.length && (
                 <ul className="flex flex-wrap gap-x-4 gap-y-1">
@@ -36,11 +39,11 @@ export function Header() {
             )}
             <div className="flex-grow justify-end hidden lg:flex lg:mr-1">
                 <Link
-                    href="https://github.com/netlify-templates/next-platform-starter"
+                    href="https://www.linkedin.com/in/rudimar/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <Image src={githubLogo} alt="GitHub logo" className="w-7" />
+                    <Image src={linkedinLogo} alt="GitHub logo" className="w-7" />
                 </Link>
             </div>
         </nav>
