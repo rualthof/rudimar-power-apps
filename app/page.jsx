@@ -4,6 +4,7 @@ import { RandomQuote } from 'components/random-quote';
 import { Markdown } from 'components/markdown';
 import { ContextAlert } from 'components/context-alert';
 import { getNetlifyContext } from 'utils';
+import { PersonalSection } from '../components/PersonalSection'
 
 const cards = [
     //{ text: 'Hello', linkText: 'someLink', href: '/' }
@@ -25,11 +26,38 @@ Alternatively, you can add Serverless Functions to any site regardless of framew
 And as always with dynamic content, beware of layout shifts & flicker! (here, we aren't...)
 `;
 
+const personalInfo = {
+    name: "Rudimar B. Althof",
+    profession: "Power Platform Consultant | Developer | Content Creator", // Update this with your actual profession
+    about: "I'm Rudimar Baesso Althof, a passionate Power Platform Consultant, Developer, and Content Creator. With expertise in Power Apps, Power Automate, and Power BI, I specialize in building efficient, scalable solutions that enhance business processes. I enjoy sharing knowledge through my YouTube channel and other platforms, helping others master low-code development. Always eager to learn and innovate, I strive to create impactful digital experiences.",
+    imageurl: "https://i.ibb.co/r2h57SDN/rudimar.jpg",
+    socials: [
+        {
+            name: "LinkedIn",
+            href: "https://linkedin.com/in/rudimar", // Update with your LinkedIn URL
+            icon: "🔗"
+        },
+        {
+            name: "YouTube",
+            href: "https://youtube.com/@powerrudy", // Update with your YouTube URL
+            icon: "📺"
+        },
+        {
+            name: "Instagram",
+            href: "https://instagram.com/powerappsrudi", // Update with your Instagram URL
+            icon: "📸"
+        }
+    ]
+};
+
 const ctx = getNetlifyContext();
 
 export default function Page() {
     return (
         <main className="flex flex-col gap-8 sm:gap-16">
+            <PersonalSection personalInfo={personalInfo} />
+            
+            {/* Existing Content */}
             <section className="flex flex-col items-start gap-3 sm:gap-4">
                 <ContextAlert />
                 <h1 className="mb-0">Netlify Platform Starter - Next.js</h1>

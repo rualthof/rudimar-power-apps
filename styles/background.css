@@ -1,0 +1,39 @@
+.modern-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.95) 0%,
+    rgba(88, 28, 135, 0.95) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(to bottom right, 
+      rgba(99, 102, 241, 0.05) 0%,
+      rgba(99, 102, 241, 0.05) 50%,
+      rgba(99, 102, 241, 0.1) 100%);
+  mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
+  pointer-events: none;
+}
+
+.grid-dots {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
