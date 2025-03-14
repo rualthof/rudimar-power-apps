@@ -3,7 +3,7 @@ export const careerTimeline = [
         year: "2021 - Present",
         role: "Power Platform Consultant",
         company: "RBA Digital (Remote)",
-        logo: "/logos/rba-digital.png", // Placeholder for company logo
+        logo: "/site-logo-light.png", // Placeholder for company logo
         description: "Providing consulting, training, and development for Power Platform solutions across multiple industries.",
         projects: [
             "Led governance and development of Power Platform applications.",

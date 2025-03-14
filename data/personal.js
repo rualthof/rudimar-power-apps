@@ -6,19 +6,19 @@ export const personalInfo = {
     imageurl: "/images/rudi.png",
     socials: [
         {
-            name: "LinkedIn",
-            href: "https://linkedin.com/in/rudimar",
-            icon: "🔗"
+            name: 'LinkedIn',
+            href: 'https://linkedin.com/in/rudimar/',
+            icon: '/logos/linkedin-app-white-icon.svg'
         },
         {
-            name: "YouTube",
-            href: "https://youtube.com/@powerrudy",
-            icon: "📺"
+            name: 'YouTube',
+            href: 'https://www.youtube.com/@powerrudy',
+            icon: '/logos/youtube-app-white-icon.svg'
         },
         {
-            name: "Instagram",
-            href: "https://instagram.com/powerappsrudi",
-            icon: "📸"
+            name: 'Instagram',
+            href: 'https://www.instagram.com/powerappsrudi',
+            icon: '/logos/instagram-white-icon.svg'
         }
     ]
 };

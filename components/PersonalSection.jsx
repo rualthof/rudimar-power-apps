@@ -30,7 +30,13 @@ export function PersonalSection({ personalInfo }) {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <span className="text-lg">{social.icon}</span>
+                                <Image 
+                                    src={social.icon}
+                                    alt={social.name}
+                                    width={20}
+                                    height={20}
+                                    className="opacity-80 group-hover:opacity-100 transition-opacity"
+                                />
                                 <span className="text-gray-200 text-sm">{social.name}</span>
                             </Link>
                         ))}
@@ -44,7 +50,7 @@ export function PersonalSection({ personalInfo }) {
                             src={personalInfo.imageurl}
                             alt={`Photo of ${personalInfo.name}`}
                             fill
-                            className="object-cover rounded-full md:rounded-xl  premium-border hover:scale-105 transition-transform duration-500"
+                            className="object-cover rounded-full md:rounded-xl  premium-border transition-transform duration-500"
                             priority
                             sizes="(max-width: 768px) 192px, 288px"
                         />
