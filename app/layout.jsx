@@ -1,6 +1,9 @@
 import '../styles/globals.css';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
+import GoogleAnalytics from '../components/GoogleAnalytics';
+
+const GA_MEASUREMENT_ID = 'G-7FRJ4HVNWQ';
 
 export const metadata = {
     title: {
@@ -55,6 +58,7 @@ export default function RootLayout({ children }) {
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
+                <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
             </head>
             <body className="antialiased text-gray-100 font-inter">
                 <div className="premium-gradient min-h-screen">
