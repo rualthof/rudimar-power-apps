@@ -11,12 +11,15 @@
 .premium-gradient {
   background: var(--gradient-premium);
   position: relative;
+  isolation: isolate;
   overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .premium-gradient::before {
   content: '';
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: 
     linear-gradient(45deg, 
@@ -27,30 +30,45 @@
   background-size: 100% 100%, 24px 24px, 24px 24px;
   mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 80%);
   pointer-events: none;
-  animation: gradientMove 20s ease-in-out infinite;
+  opacity: 0.8;
+  transform: translateZ(0);
+  will-change: background-position;
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 0%, 0 0, 0 0; }
-  50% { background-position: 100% 100%, 12px 12px, 12px 12px; }
-  100% { background-position: 0% 0%, 0 0, 0 0; }
+  0% { 
+    background-position: 0% 0%, 0 0, 0 0;
+    opacity: 0.8;
+  }
+  50% { 
+    background-position: 100% 100%, 12px 12px, 12px 12px;
+    opacity: 1;
+  }
+  100% { 
+    background-position: 0% 0%, 0 0, 0 0;
+    opacity: 0.8;
+  }
 }
 
 /* Add a subtle radial gradient for depth */
 .premium-gradient::after {
   content: '';
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(206, 165, 93, 0.03) 0%, transparent 50%);
+  background: radial-gradient(
+    circle at center,
+    rgba(206, 165, 93, 0.03) 0%,
+    transparent 70%
+  );
   pointer-events: none;
-  animation: glowPulse 10s ease-in-out infinite;
+  opacity: 0.5;
+  transform: translateZ(0);
+  will-change: opacity;
 }
 
 @keyframes glowPulse {
   0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  50% { opacity: 0.8; }
 }
 
 .text-gold {

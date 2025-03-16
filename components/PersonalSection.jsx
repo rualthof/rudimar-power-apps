@@ -1,5 +1,6 @@
 'use client'
 
+import { OptimizedImage } from 'components/OptimizedImage'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -36,7 +37,7 @@ export function PersonalSection({ personalInfo }) {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Image 
+                                <OptimizedImage 
                                     src={social.icon}
                                     alt={social.name}
                                     width={20}
@@ -51,12 +52,12 @@ export function PersonalSection({ personalInfo }) {
 
                 {/* Image - Right side */}
                 <div className="relative w-48 h-48 md:w-72 md:h-[350px] mx-auto md:mx-0 flex-shrink-0 order-1 md:order-2">
-                    <div className="relative w-full h-full overflow-hidden">
+                  <div className="relative w-full h-full overflow-hidden">
                         <Image
                             src={personalInfo.imageurl}
                             alt={`Photo of ${personalInfo.name}`}
                             fill
-                            className="object-cover rounded-full md:rounded-xl  premium-border transition-transform duration-500"
+                            className="object-cover rounded-full md:rounded-xl premium-border transition-transform duration-500"
                             priority
                             sizes="(max-width: 768px) 192px, 288px"
                         />

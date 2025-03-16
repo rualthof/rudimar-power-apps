@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { socialLinks } from '../data/social';
+import { OptimizedImage } from 'components/OptimizedImage';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
@@ -38,7 +39,7 @@ export function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Image 
+                                <OptimizedImage 
                                     src={link.icon} 
                                     alt={link.name} 
                                     width={24} 

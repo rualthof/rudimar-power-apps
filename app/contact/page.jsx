@@ -24,7 +24,7 @@ export const metadata = {
         type: 'website',
         url: 'https://rudimar.dev/contact',
         images: [{
-            url: '/images/training-og.jpg',
+            url: '/images/optimized/training-og.webp',
             width: 1200,
             height: 630,
             alt: 'Power Apps Training and Consulting with Rudimar'
@@ -34,7 +34,7 @@ export const metadata = {
         card: 'summary_large_image',
         title: 'Power Apps Training & Consulting',
         description: 'Get expert Power Apps training and consulting',
-        images: ['/images/training-twitter.jpg']
+        images: ['/images/optimized/training-twitter.webp']
     },
     alternates: {
         canonical: 'https://rudimar.dev/contact'

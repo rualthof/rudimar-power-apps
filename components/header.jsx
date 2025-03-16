@@ -1,9 +1,10 @@
 'use client';
-import Image from 'next/image';
+import { OptimizedImage } from 'components/OptimizedImage';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import siteLogo from 'public/site-logo-light.png';
+import siteLogo from 'public/logos/site-logo-light.png';
 import linkedinLogo from 'public/logos/linkedin-app-white-icon.svg';
 import youtubeLogo from 'public/logos/youtube-app-white-icon.svg';
 
@@ -65,7 +66,7 @@ export function Header() {
                             rel="noopener noreferrer"
                             className="premium-social-link w-14 h-10 flex items-center justify-center"
                         >
-                            <Image 
+                            <OptimizedImage 
                                 src={linkedinLogo} 
                                 alt="LinkedIn" 
                                 width={24}
@@ -79,7 +80,7 @@ export function Header() {
                             rel="noopener noreferrer"
                             className="premium-social-link w-14 h-10 flex items-center justify-center"
                         >
-                            <Image 
+                            <OptimizedImage 
                                 src={youtubeLogo} 
                                 alt="YouTube" 
                                 width={24}
@@ -117,7 +118,7 @@ export function Header() {
                                     className="premium-social-link inline-flex items-center gap-2"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    <Image 
+                                    <OptimizedImage 
                                         src={linkedinLogo} 
                                         alt="LinkedIn" 
                                         className="w-5" 
@@ -131,7 +132,7 @@ export function Header() {
                                     className="premium-social-link inline-flex items-center gap-2"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    <Image 
+                                    <OptimizedImage 
                                         src={youtubeLogo} 
                                         alt="YouTube" 
                                         className="w-5" 
