@@ -9,7 +9,7 @@ import youtubeLogo from 'public/logos/youtube-app-white-icon.svg';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Career', href: '/career' },
+    { linkText: 'Blog', href: '/blog' },
     { linkText: 'Courses', href: '/courses' },
     { linkText: 'Contact', href: '/contact' },
 ];

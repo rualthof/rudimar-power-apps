@@ -4,7 +4,7 @@ import Link from 'next/link';
 const CONTACT_FORM_URL = "https://forms.office.com/Pages/ResponsePage.aspx?id=BUYQf-llWE6ne6YCnfKJ2ZbFPOWjjSpKiy0eYvhqTtxUQkE0TFlBRVRKNFZRQjgwT1lHRUFBRzFEQi4u&embed=true";
 
 export const metadata = {
-    title: 'Power Apps Training & Consulting | Expert Mentorship | Rudimar.dev',
+    title: 'Power Apps Training & Consulting | Expert Mentorship',
     description: 'Get personalized Power Apps training, 1-on-1 mentorship, and expert consulting. Learn from a Microsoft Power Platform specialist with real-world experience.',
     keywords: [
         'Power Apps Training',

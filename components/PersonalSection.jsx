@@ -15,6 +15,12 @@ export function PersonalSection({ personalInfo }) {
                     
                     <p className="text-lg md:text-xl font-playfair text-gold mb-4">
                         {personalInfo.profession}
+                        <Link 
+                            href="/career" 
+                            className="ml-3 text-sm premium-social-link inline-flex items-center"
+                        >
+                            View Career
+                        </Link>
                     </p>
                     
                     <p className="text-gray-300 leading-relaxed mb-6">
