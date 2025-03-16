@@ -10,7 +10,7 @@ export function generateStaticParams() {
 
 export default function CoursePage({ params }) {
     const course = courses.find(
-        (c) => encodeURIComponent(c.title) === params.slug
+        (c) => encodeURIComponent(c.slug) === params.slug
     );
 
     if (!course) return null;

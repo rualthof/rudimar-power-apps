@@ -1,5 +1,7 @@
 export const courses = [
     {
+        id: 1,
+        slug: "power-apps-101",
         title: "Power Apps & Power Automate: Build Real-World Apps from Scratch",
         description: "Learn Microsoft Power Apps and Power Automate by creating real-world applications from scratch. This hands-on course guides you through building functional, data-driven apps while integrating Excel and SharePoint as data sources.",
         keyHighlights: [

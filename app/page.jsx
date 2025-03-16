@@ -37,28 +37,58 @@ export default function Page() {
         <main className="flex flex-col gap-8 sm:gap-16">
             <PersonalSection personalInfo={personalInfo} />
   
-            <section className="flex flex-col gap-4">
-                <h2 className="text-xl font-bold text-gradient">Featured YouTube Videos</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <section className="flex flex-col gap-6" aria-labelledby="videos-title">
+                <div className="flex items-center justify-between">
+                    <h2 id="videos-title" className="text-2xl font-playfair font-bold text-gradient">
+                        Featured YouTube Videos
+                    </h2>
+                    <Link 
+                        href="https://www.youtube.com/@powerrudy" 
+                        className="premium-social-link text-sm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Channel
+                    </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {youtubeVideos.map((video, index) => (
-                        <div key={index} className="aspect-video bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <iframe
-                                width="100%"
-                                height="100%"
-                                src={`https://www.youtube.com/embed/${video.id}`}
-                                title={video.title}
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="w-full h-full"
-                            ></iframe>
+                        <div key={index} className="premium-card rounded-xl overflow-hidden group hover:scale-[1.02] transition-all duration-300">
+                            <div className="aspect-video bg-gray-800">
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src={`https://www.youtube.com/embed/${video.id}`}
+                                    title={video.title}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    className="w-full h-full"
+                                ></iframe>
+                            </div>
+                            <div className="p-4">
+                                <h3 className="font-semibold text-gold">
+                                    {video.title}
+                                </h3>
+                            </div>
                         </div>
                     ))}
                 </div>
             </section>
 
-            <section className="flex flex-col gap-4">
-                <h2 className="text-xl font-bold text-gradient">Courses</h2>
+            <section className="flex flex-col gap-6" aria-labelledby="courses-title">
+                <div className="flex items-center justify-between">
+                    <h2 id="courses-title" className="text-2xl font-playfair font-bold text-gradient">
+                        Power Platform Courses
+                    </h2>
+                    <Link 
+                        href="/courses" 
+                        className="premium-button text-sm"
+                    >
+                        View All Courses
+                    </Link>
+                </div>
                 <div className="grid grid-cols-1 gap-6">
                     {courses.map((course, index) => (
                         <CourseCard key={index} course={course} />
@@ -66,34 +96,32 @@ export default function Page() {
                 </div>
             </section>
 
-            <hr />
-            
-        <div className='hidden'>
-
-            <section className="flex flex-col items-start gap-3 sm:gap-4">
-                <ContextAlert />
-                <h1 className="mb-0">Netlify Platform Starter - Next.js</h1>
-                <p className="text-lg">Get started with Next.js and Netlify in seconds.</p>
-                <Link
-                    href="https://docs.netlify.com/frameworks/next-js/overview/"
-                    className="btn btn-lg btn-primary sm:btn-wide"
-                >
-                    Read the Docs
-                </Link>
-            </section>
-            {!!ctx && (
-                <section className="flex flex-col gap-4">
-                    <Markdown content={contextExplainer} />
-                    <RuntimeContextCard />
+            <div className='hidden'>
+                <section className="flex flex-col items-start gap-3 sm:gap-4">
+                    <ContextAlert />
+                    <h1 className="mb-0">Netlify Platform Starter - Next.js</h1>
+                    <p className="text-lg">Get started with Next.js and Netlify in seconds.</p>
+                    <Link
+                        href="https://docs.netlify.com/frameworks/next-js/overview/"
+                        className="btn btn-lg btn-primary sm:btn-wide"
+                    >
+                        Read the Docs
+                    </Link>
                 </section>
-            )}
-            <section className="flex flex-col gap-4">
-                <Markdown content={preDynamicContentExplainer} />
-                <RandomQuote />
-                <Markdown content={postDynamicContentExplainer} />
-            </section>
-            {/* !!cards?.length && <CardsGrid cards={cards} /> */}
-        </div>
+                {!!ctx && (
+                    <section className="flex flex-col gap-4">
+                        <Markdown content={contextExplainer} />
+                        <RuntimeContextCard />
+                    </section>
+                )}
+                <section className="flex flex-col gap-4">
+                    <Markdown content={preDynamicContentExplainer} />
+                    <RandomQuote />
+                    <Markdown content={postDynamicContentExplainer} />
+                </section>
+                {/* !!cards?.length && <CardsGrid cards={cards} /> */}
+            </div>
+
         </main>
     );
 }

@@ -85,6 +85,7 @@
   overflow: hidden;
   isolation: isolate;
   box-shadow: 0 4px 12px rgba(206, 165, 93, 0.2);
+  text-decoration: none; /* Avoid underlines if it is inside a link */
 }
 
 .premium-button::before {
@@ -161,6 +162,7 @@
   background: rgba(206, 165, 93, 0.05);
   border: 1px solid rgba(206, 165, 93, 0.1);
   backdrop-filter: blur(12px);
+  text-decoration: none;
 }
 
 .premium-social-link:hover {

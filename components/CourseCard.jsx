@@ -43,7 +43,7 @@ export function CourseCard({ course }) {
                 {/* Buttons */}
                 <div className="flex gap-4 mt-8">
                     <Link 
-                        href={`/courses/${encodeURIComponent(course.title)}`}
+                        href={`/courses/${encodeURIComponent(course.slug)}`}
                         className="premium-button px-6 py-3 rounded-lg flex-1 md:flex-none text-center hover:scale-105 transition-transform duration-300"
                     >
                         Learn More
@@ -52,7 +52,7 @@ export function CourseCard({ course }) {
                         href={course.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-lg border border-gold/20 hover:border-gold/40 flex-1 md:flex-none text-center hover:scale-105 transition-transform duration-300"
+                        className="no-underline px-6 py-3 rounded-lg border border-gold/20 hover:border-gold/40 flex-1 md:flex-none text-center hover:scale-105 transition-transform duration-300"
                     >
                         Enroll Now
                     </Link>

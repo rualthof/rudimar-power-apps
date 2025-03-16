@@ -1,24 +1,63 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 
 const CONTACT_FORM_URL = "https://forms.office.com/Pages/ResponsePage.aspx?id=BUYQf-llWE6ne6YCnfKJ2ZbFPOWjjSpKiy0eYvhqTtxUQkE0TFlBRVRKNFZRQjgwT1lHRUFBRzFEQi4u&embed=true";
+
+export const metadata = {
+    title: 'Power Apps Training & Consulting | Expert Mentorship | Rudimar.dev',
+    description: 'Get personalized Power Apps training, 1-on-1 mentorship, and expert consulting. Learn from a Microsoft Power Platform specialist with real-world experience.',
+    keywords: [
+        'Power Apps Training',
+        'Power Platform Consulting',
+        'Power Apps Mentorship',
+        'Power Apps Expert',
+        'Microsoft Power Apps Learning',
+        'Custom Power Apps Solutions',
+        'Power Platform Development',
+        'Power Apps Consultant',
+        '1-on-1 Power Apps Coaching',
+        'Business Process Automation'
+    ],
+    openGraph: {
+        title: 'Power Apps Training & Expert Consulting | Rudimar.dev',
+        description: 'Transform your career with personalized Power Apps training and mentorship. Expert consulting for businesses looking to leverage the Power Platform.',
+        type: 'website',
+        url: 'https://rudimar.dev/contact',
+        images: [{
+            url: '/images/training-og.jpg',
+            width: 1200,
+            height: 630,
+            alt: 'Power Apps Training and Consulting with Rudimar'
+        }]
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Power Apps Training & Consulting',
+        description: 'Get expert Power Apps training and consulting',
+        images: ['/images/training-twitter.jpg']
+    },
+    alternates: {
+        canonical: 'https://rudimar.dev/contact'
+    }
+};
 
 export default function TrainingPage() {
     return (
         <main className="max-w-4xl mx-auto py-16 px-6 text-gray-200">
             <h1 className="text-4xl font-playfair font-bold text-center mb-6 text-gradient">
-                Power Apps Training & Mentorship
+                Professional Power Apps Training & Expert Consulting
             </h1>
 
             <p className="text-lg text-gray-300 text-center mb-12">
-                Limited spots available – serious inquiries only.
+                Transform your career with personalized Power Platform training. Limited spots available.
             </p>
 
             <section className="premium-card p-8 rounded-xl">
-                <h2 className="text-2xl font-playfair font-semibold text-gold mb-6">Why Work With Me?</h2>
+                <h2 className="text-2xl font-playfair font-semibold text-gold mb-6">Expert Power Apps Training</h2>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                    Thank you for your interest in working with me on your <strong>Microsoft Power Apps</strong> journey. 
-                    My mentorship and training programs are designed for professionals who are serious about 
-                    building real skills and achieving tangible results.
+                    Elevate your <strong>Microsoft Power Apps</strong> skills with professional training and mentorship. 
+                    My programs are tailored for professionals seeking practical skills and measurable results 
+                    in Power Platform development.
                 </p>
 
                 <ul className="space-y-3">
@@ -93,6 +132,29 @@ export default function TrainingPage() {
                     Back to Home
                 </Link>
             </div>
+
+            {/* Add structured data for SEO */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "name": "Power Apps Training & Consulting",
+                    "provider": {
+                        "@type": "Person",
+                        "name": "Rudimar B. Althof",
+                        "url": "https://rudimar.dev"
+                    },
+                    "serviceType": "Professional Training",
+                    "areaServed": "Worldwide",
+                    "description": "Professional Power Apps training and consulting services, including 1-on-1 mentorship and custom business solutions.",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "80",
+                        "priceCurrency": "EUR",
+                        "availability": "LimitedAvailability"
+                    }
+                })
+            }} />
         </main>
     );
 }

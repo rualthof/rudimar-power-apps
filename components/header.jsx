@@ -5,10 +5,12 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import siteLogo from 'public/site-logo-light.png';
 import linkedinLogo from 'public/logos/linkedin-app-white-icon.svg';
+import youtubeLogo from 'public/logos/youtube-app-white-icon.svg';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Carreer', href: '/carreer' },
+    { linkText: 'Career', href: '/career' },
+    { linkText: 'Courses', href: '/courses' },
     { linkText: 'Contact', href: '/contact' },
 ];
 
@@ -30,14 +32,14 @@ export function Header() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="p-2 md:hidden text-gold hover:text-gold/80 transition-colors"
+                    className="p-2 md:hidden text-gold hover:text-gold/80 transition-colors text-lg"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     {isMenuOpen ? '✕' : '☰'}
                 </button>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden md:flex items-center gap-5">
                     <ul className="flex gap-x-6">
                         {navItems.map((item, index) => (
                             <li key={index}>
@@ -56,18 +58,36 @@ export function Header() {
                         ))}
                     </ul>
                     
-                    <Link
-                        href="https://www.linkedin.com/in/rudimar/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="premium-social-link"
-                    >
-                        <Image 
-                            src={linkedinLogo} 
-                            alt="LinkedIn" 
-                            className="w-6 opacity-80 hover:opacity-100 transition-opacity" 
-                        />
-                    </Link>
+                    <div className="flex items-center gap-5">
+                        <Link
+                            href="https://www.linkedin.com/in/rudimar/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="premium-social-link w-14 h-10 flex items-center justify-center"
+                        >
+                            <Image 
+                                src={linkedinLogo} 
+                                alt="LinkedIn" 
+                                width={24}
+                                height={24}
+                                className="opacity-80 group-hover:opacity-100 transition-opacity" 
+                            />
+                        </Link>
+                        <Link
+                            href="https://www.youtube.com/@powerrudy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="premium-social-link w-14 h-10 flex items-center justify-center"
+                        >
+                            <Image 
+                                src={youtubeLogo} 
+                                alt="YouTube" 
+                                width={24}
+                                height={24}
+                                className="opacity-80 group-hover:opacity-100 transition-opacity" 
+                            />
+                        </Link>
+                    </div>
                 </div>
             </div>
 
@@ -89,20 +109,36 @@ export function Header() {
                             </li>
                         ))}
                         <li className="pt-4 border-t border-gold/10">
-                            <Link
-                                href="https://www.linkedin.com/in/rudimar/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="premium-social-link inline-flex items-center gap-2"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                <Image 
-                                    src={linkedinLogo} 
-                                    alt="LinkedIn" 
-                                    className="w-5" 
-                                />
-                                <span>LinkedIn</span>
-                            </Link>
+                            <div className="flex gap-4">
+                                <Link
+                                    href="https://www.linkedin.com/in/rudimar/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="premium-social-link inline-flex items-center gap-2"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    <Image 
+                                        src={linkedinLogo} 
+                                        alt="LinkedIn" 
+                                        className="w-5" 
+                                    />
+                                    <span>LinkedIn</span>
+                                </Link>
+                                <Link
+                                    href="https://www.youtube.com/@powerrudy"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="premium-social-link inline-flex items-center gap-2"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    <Image 
+                                        src={youtubeLogo} 
+                                        alt="YouTube" 
+                                        className="w-5" 
+                                    />
+                                    <span>YouTube</span>
+                                </Link>
+                            </div>
                         </li>
                     </ul>
                 </div>
