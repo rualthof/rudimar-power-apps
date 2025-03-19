@@ -99,14 +99,30 @@ export default function CoursePage({ params }) {
                 {/* Automation Content */}
                 <section className="premium-card p-8 rounded-xl">
                     <h2 className="text-2xl font-playfair font-semibold text-gold mb-6">Power Automate Integration</h2>
-                    <ul className="space-y-4">
-                        {course.automationContent.map((content, index) => (
-                            <li key={index} className="text-gray-300 flex items-start gap-3">
-                                <span className="text-gold">•</span>
-                                <span>{content}</span>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="flex flex-col md:flex-row gap-6">
+                        <div className="md:w-1/2">
+                            <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+                                <Image
+                                    src={course.automationImage || '/images/power-automate.jpg'}
+                                    alt="Power Automate Integration"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent" />
+                            </div>
+                        </div>
+                        <div className="md:w-1/2">
+                            <ul className="space-y-4">
+                                {course.automationContent.map((content, index) => (
+                                    <li key={index} className="text-gray-300 flex items-start gap-3">
+                                        <span className="text-gold">•</span>
+                                        <span>{content}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </section>
 
                 {/* CTA */}
