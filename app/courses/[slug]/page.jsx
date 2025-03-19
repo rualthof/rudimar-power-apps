@@ -71,29 +71,30 @@ export default function CoursePage({ params }) {
                     </ul>
                 </section>
 
-                {/* Projects */}
-                <section className="space-y-6">
-                    <h2 className="text-2xl font-playfair font-semibold text-gradient">What You&apos;ll Build</h2>
-                    <div className="grid gap-6 md:grid-cols-2">
-                        {course.projects.map((project, index) => (
-                            <div key={index} className="premium-card overflow-hidden rounded-xl group hover:scale-[1.02] transition-transform duration-300">
-                                <div className="relative h-48 w-full">
-                                    <Image
-                                        src={project.project_image || '/images/placeholder-project.jpg'}
-                                        alt={project.name}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent" />
-                                </div>
-                                <div className="p-6 relative">
-                                    <h3 className="text-xl font-semibold text-gold mb-3">{project.name}</h3>
-                                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                   {/* Projects */}
+                                <section className="space-y-6">
+                                    <h2 className="text-2xl font-playfair font-semibold text-gradient">What You&apos;ll Build</h2>
+                                    <div className="grid gap-6 md:grid-cols-2">
+                                        {course.projects.map((project, index) => (
+                                            <div key={index} className="premium-card overflow-hidden rounded-xl group hover:scale-[1.02] transition-transform duration-300">
+                                                <div className="relative aspect-video w-full">
+                                                    <Image
+                                                        src={project.project_image || '/images/placeholder-project.jpg'}
+                                                        alt={project.name}
+                                                        fill
+                                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent" />
+                                                </div>
+                                                <div className="p-6 relative">
+                                                    <h3 className="text-xl font-semibold text-gold mb-3">{project.name}</h3>
+                                                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
 
                 {/* Automation Content */}
                 <section className="premium-card p-8 rounded-xl">

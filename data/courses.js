@@ -16,12 +16,12 @@ export const courses = [
             {
                 name: "📱 Contact Agenda App (Excel)",
                 description: "Build a simple contact management app using Excel as the backend. Learn how to add, edit, and delete contacts efficiently.",
-                project_image: "/images/powerapps-course.png"
+                project_image: "/images/agenda-app.jpg"
             },
             {
                 name: "⏳ Time Tracking App (SharePoint)",
                 description: "Create a time-tracking solution using SharePoint. Learn how to log time spent on tasks, automate calculations, and generate reports.",
-                project_image: "/images/powerapps-course.png"
+                project_image: "/images/timesheet-app.jpg"
             }
         ],
         automationContent: [
@@ -30,7 +30,7 @@ export const courses = [
             "Utilize loops, variables, and HTML/CSS for dynamic workflow customization."
         ],
         pricing: "💡 Available on Udemy with lifetime access.",
-        link: "https://www.udemy.com/course/power-apps-learn-to-build-an-app-to-manage-your-inventory/?referralCode=394D1C18B17843401D9C",
+        link: "https://www.udemy.com/course/power-apps-learn-to-build-an-app-to-manage-your-inventory/?couponCode=RUDIMARDEVSITE",
         platform: "Udemy",
         image: "/images/powerapps-course.png"
     }
